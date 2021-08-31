@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title> Sai's Page</title>
+      <link rel="stylesheet" href= "{{  url_for('static', filename='sns.css')}}">
+   </head>
+   <body align="center">
+      <h1> Predicition Price of Home or PG in India </h1>
+      <form action="{{ url_for('predict')}}" method="post">
+         <center> <label >  Choose city: </label>
+         <select name= "city" id="City_Select">
+            <option value="">--Please choose an option--</option>
+            <option value="ncr">NCR</option>
+            <option value=" bangalore">Bangalore</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="trivandrum">Trivandrum</option>
+            <option value="pune">Pune</option>
+            <option value="chennai">Chennai</option>
+            <option value="hyderabad">Trivandrum</option>
+            <option value="ahmedabad">Pune</option>
+         </select>  </center>
+         <br>
+         <br>
+         <br>
+         <center> <label>  Deposit number of months  </label>
+         <input type="text" name= "deposit" value=""> </center> 
+         <br>
+         <br>
+         <br>
+         <label>  Number of Bed Rooms  </label>
+         <input type="text" name= "bed" value="">
+         <br>
+         <br>
+         <br>
+         <label>  Number of Wash Rooms Rooms  </label>
+         <input type="text" name= "wash" value="">
+         <br>
+         <br>
+         <br>
+         <label>  Area   </label>
+         <select  name= "area" id="A_Select">
+            <option value="">--Please Select our Area type--</option>
+            <option value="carpet">carpet Area  </option>
+            <option value=" built-up">Built-up</option>
+            <option value="plot">plot</option>
+            <option value="super">Super Built-up Area</option>
+         </select>
+         <br>
+         <br>
+         <br>
+         <label>  Enter Your Sqaure Foot  </label>
+         <input type="text" name= "sq" value="">
+         <br>
+         <br>
+         <br>
+         <label>  Type of house  </label>
+         <select   name="type" id="House_Select">
+            <option value="">--Please choose an option--</option>
+            <option value="residental">Residental Area</option>
+            <option value=" independent "> independent house</option>
+            <option value="farm">Farm house</option>
+            <option value="studio">Studio house</option>
+            <option value="floor"> Floor house</option>
+         </select>
+         <br>
+         <br>
+         <br>
+         <label>  Area of house  </label>
+         <input type="text" name= "a1" value="">
+         <br>
+         <button type="button" class="btn btn-primary btn-lg">Predict</button>
+      </form>
+      {{ prediction_text }}
+   </body>
+</html>
